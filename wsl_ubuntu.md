@@ -71,13 +71,13 @@ Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
 
 
 # nano /etc/environment
-http_proxy=http://10.23.22.10:8080/
-https_proxy=http://10.23.22.10:8080/
-ftp_proxy=http://10.23.22.10:8080/
+http_proxy=http://proxyip:8080/
+https_proxy=http://proxyip:8080/
+ftp_proxy=http://proxyip:8080/
 no_proxy="localhost,127.0.0.1,youripaddress,.local.domain"
-HTTP_PROXY=http://10.23.22.10:8080/
-HTTPS_PROXY=http://10.23.22.10:8080/
-FTP_PROXY=http://10.23.22.10:8080/
+HTTP_PROXY=http://proxyip:8080/
+HTTPS_PROXY=http://proxyip:8080/
+FTP_PROXY=http://proxyip:8080/
 NO_PROXY="localhost,127.0.0.1,youripaddress,.local.domain"
 
 # nano /etc/wgetrc (Search Proxy Section)
