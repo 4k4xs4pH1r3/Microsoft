@@ -9,6 +9,8 @@ install-module PowerShellGet -verbose -force
 install-module pester -verbose -force –SkipPublisherCheck
 install-module azurerm -verbose -AllowClobber
 install-module azuread -verbose –AllowClobber
+
+Download and Install AZ Cli from https://aka.ms/installazurecliwindows
 ```
 Once completed close the PS Window.
 
