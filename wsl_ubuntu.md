@@ -33,7 +33,7 @@ Third, go to Microsoft Store search *Ubuntu* and install
 #
 
 
-## Update the WSL and set your timezone
+## Open the Ubuntu WSL, Update and set your timezone
 Get your WSL to the latest and greatest within the version installed. Run as root:
 ```
 apt-get update -y
