@@ -27,7 +27,10 @@ Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Window
 
 Third, go to Microsoft Store search *Ubuntu* and install
 
-## Specially if you are behind of proxies
+#
+#
+#
+#
 
 
 ## Update the WSL and set your timezone
@@ -241,7 +244,7 @@ Import-Module -Name AzureRM.Netcore
 #
 #
 #
-#
+### Specially if you are behind of proxies
 ## Set the Proxy Server for Shell & APT Repositories  (Optional)
 Edit the following files. Make sure you replace with your LDAP credentials.
 ```
