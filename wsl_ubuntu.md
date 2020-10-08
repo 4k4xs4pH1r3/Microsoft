@@ -25,74 +25,9 @@ First, you need to upgrade your Windows 10 to the lastest version (take 3 hours 
 
 Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Windows features on or off* and tick the feature "*Windows Subsystem for Linux*".
 
-Third, go to Microsoft Store and install *Ubuntu 16.04 LTS* or *Ubuntu 18.04 LTS* accord to your needs.
+Third, go to Microsoft Store search *Ubuntu* and install
 
 ## Specially if you are behind of proxies
-## Set the Proxy Server for Shell & APT Repositories  
-Edit the following files. Make sure you replace with your LDAP credentials.
-```
-you may create a config file containing proxy settings as follows:
-
-## Set your new root password in Ubuntu
-sudo passwd
-
-## Login as root
-sudo -su
-
-# nano /etc/apt/apt.conf.d/99proxy.conf
-
-Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
-Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
-Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
-
-
-# nano /etc/apt/apt.conf
-
-Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
-Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
-Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
-
-
-# nano /etc/apt/apt.conf.d/95proxies
-
-Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
-Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
-Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
-
-
-# nano ~/.bash.rc
-Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
-Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
-Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
-
-
-# nano /etc/environment
-http_proxy=http://proxyip:8080/
-https_proxy=http://proxyip:8080/
-ftp_proxy=http://proxyip:8080/
-no_proxy="localhost,127.0.0.1,youripaddress,.local.domain"
-HTTP_PROXY=http://proxyip:8080/
-HTTPS_PROXY=http://proxyip:8080/
-FTP_PROXY=http://proxyip:8080/
-NO_PROXY="localhost,127.0.0.1,youripaddress,.local.domain"
-
-# nano /etc/wgetrc (Search Proxy Section)
-https_proxy  = http://domain\samaccount:yourpassword@proxyip:8443
-http_proxy = http://domain\samaccount:yourpassword@proxyip:8080
-ftp_proxy = http://domain\samaccount:yourpassword@proxyip:8080
-
-Uncomment 'use_proxy = on'
-
-
-
-
-```
-
-Some valid proxies are:
-```
-domain (ip)
-domain (ip)
-```
 
 
 ## Update the WSL and set your timezone
@@ -301,7 +236,81 @@ You may want to also install the AzureRM's modules. Within a PowerShell prompt a
 Install-Module -Name AzureRM.Netcore
 Import-Module -Name AzureRM.Netcore 
 ```
+#
+#
+#
+#
+#
+#
+## Set the Proxy Server for Shell & APT Repositories  (Optional)
+Edit the following files. Make sure you replace with your LDAP credentials.
+```
+you may create a config file containing proxy settings as follows:
 
+## Set your new root password in Ubuntu
+sudo passwd
+
+## Login as root
+sudo -su
+
+# nano /etc/apt/apt.conf.d/99proxy.conf
+
+Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
+Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
+Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+
+
+# nano /etc/apt/apt.conf
+
+Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
+Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
+Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+
+
+# nano /etc/apt/apt.conf.d/95proxies
+
+Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
+Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
+Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+
+
+# nano ~/.bash.rc
+Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
+Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
+Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+
+
+# nano /etc/environment
+http_proxy=http://proxyip:8080/
+https_proxy=http://proxyip:8080/
+ftp_proxy=http://proxyip:8080/
+no_proxy="localhost,127.0.0.1,youripaddress,.local.domain"
+HTTP_PROXY=http://proxyip:8080/
+HTTPS_PROXY=http://proxyip:8080/
+FTP_PROXY=http://proxyip:8080/
+NO_PROXY="localhost,127.0.0.1,youripaddress,.local.domain"
+
+# nano /etc/wgetrc (Search Proxy Section)
+https_proxy  = http://domain\samaccount:yourpassword@proxyip:8443
+http_proxy = http://domain\samaccount:yourpassword@proxyip:8080
+ftp_proxy = http://domain\samaccount:yourpassword@proxyip:8080
+
+Uncomment 'use_proxy = on'
+
+
+
+
+```
+
+Some valid proxies are:
+```
+domain (ip)
+domain (ip)
+```
+
+#
+#
+#
 #
 #
 #
