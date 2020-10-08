@@ -21,7 +21,7 @@ Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux bin
 
 ## Install WSL
 
-First, you need to upgrade your Windows 10 to the lastest version (take 3 hours aprox). Download the Windows Update Assistant [here](https://www.microsoft.com/en-us/software-download/windows10) and execute it. When this entry was written the lastest Windows 10's build was 1809.
+First, you need to have your Windows 10 updated to the lastest version (take 3 hours aprox). Download the Windows Update Assistant [here](https://www.microsoft.com/en-us/software-download/windows10) and execute it.
 
 Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Windows features on or off* and tick the feature "*Windows Subsystem for Linux*".
 
