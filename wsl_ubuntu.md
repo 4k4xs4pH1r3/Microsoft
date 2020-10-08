@@ -142,7 +142,7 @@ hash_behaviour = merge
 
 Either add it to the file / default section, add the section if not present or even create the file with the content shown as above.
 
-### Install and Set your default Azure CLI in *Ubuntu 16.04 LTS*
+### Install and Set your default Azure CLI in *Ubuntu*
 As root run:
 ```
 AZ_REPO=$(lsb_release -cs)
