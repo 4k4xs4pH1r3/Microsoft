@@ -18,12 +18,6 @@ Once completed close the PS Window.
 
 Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
 
-## Uninstall WSL if already present (optional)
-With a **_privileged user_** run on a command window:
-
-```
-lxrun /uninstall /full /y
-```
 
 ## Install WSL
 
@@ -306,4 +300,16 @@ You may want to also install the AzureRM's modules. Within a PowerShell prompt a
 ```
 Install-Module -Name AzureRM.Netcore
 Import-Module -Name AzureRM.Netcore 
+```
+
+#
+#
+#
+#
+## Uninstall WSL (optional)
+
+With a **_privileged user_** run on a command window:
+
+```
+lxrun /uninstall /full /y
 ```
