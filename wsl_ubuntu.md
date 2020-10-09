@@ -35,6 +35,7 @@ Third, go to Microsoft Store search *Ubuntu* and install
 
 ## Open the Ubuntu WSL, Update and set your timezone
 Get your WSL to the latest and greatest within the version installed. Run as root:
+
 ```
 apt-get update -y
 apt-get upgrade -y
@@ -52,6 +53,7 @@ Ansible Tower version is 3.2.3 and it runs Ansible version 2.4.2.
 
 To install the Ansible v2.4.2 run
 
+
 ```
 echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu zesty main' | \
      sudo tee /etc/apt/sources.list.d/ansible.list
@@ -68,26 +70,9 @@ Keep in mind that package *ansible* is marked on hold to prevent future upgrades
 apt install python-pip -y
 apt install python3-pip -y
 apt install ansible -y
-
-
-#ansible --version *2.4.2 for Ubuntu 16.04 LTS*
-ansible 2.4.2.0
-  config file = /etc/ansible/ansible.cfg
-  configured module search path = [u'/home/pr1v8/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
-  executable location = /usr/bin/ansible
-  python version = 2.7.12 (default, Dec  4 2017, 14:50:18) [GCC 5.4.0 20160609]
-
-
-root@x:~# ansible --version  *2.5.1 for Ubuntu 18.04 LTS*
-ansible 2.5.1
-  config file = /etc/ansible/ansible.cfg
-  configured module search path = [u'/home/pr1v8/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
-  executable location = /usr/bin/ansible
-  python version = 2.7.15rc1 (default, Apr 15 2018, 21:51:34) [GCC 7.3.0]
-root@x:~#
 ```
+
+
 
 ### Set-up the WLS Ansible environment
 #### Ansible Global Variables
@@ -150,7 +135,7 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 curl -L https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 apt-get install apt-transport-https -y
 apt-get update && apt-get install azure-cli -y
-
+```
 
 
 
@@ -158,27 +143,35 @@ apt-get update && apt-get install azure-cli -y
 
 ### Install and Set your default Azure CLI + VS Code + .NET Core SDK 2.1 in *Ubuntu 18.04 LTS*
 As root run:
-
+```
 rm -r /etc/resolv.conf
 sudo systemctl disable systemd-resolved.service
 sudo systemctl enable systemd-resolved.service
+```
 
 close Ubuntu
 
 open again Ubuntu
 
+```
 sudo apt-get install dirmngr apt-transport-https
+```
 
+```
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+```
 
+```
 sudo apt-get update -y
 sudo apt-get install code -y
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main" > /etc/apt/sources.list.d/dotnetdev.list'
 sudo apt-get update -y
 sudo apt-get install dotnet-sdk-2.1 -y
+```
 
+```
 AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
     sudo tee /etc/apt/sources.list.d/azure-cli.list
@@ -186,24 +179,34 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get update -y
 sudo apt-get install azure-cli -y
 sudo apt-get update && sudo apt-get upgrade
+```
 
 ## Common az cli commands
 
 » For aunthenticate in Azure cli
+```
 az login
+```
 
 ### Example for Set an subscription as default 
 
-#az account list
+```
+az account list
+```
 
-
-#az account set --subscription "id"
+```
+az account set --subscription "id"
+```
 
 » For see the guide for use the azure cli
-#az --help
+```
+az --help
+```
 
 » For start an interactive session in azure cli, like Cloud Shell with autocomplete feature, using TAB key 
-#az interactive 
+
+```
+az interactive 
 
 ```
 
@@ -226,11 +229,12 @@ pwsh
 As root run:
 ```
 sudo apt-get install lxde xrdp -y
+```
 
 #Initialize xrdp
+```
 /etc/init.d/xrdp start
 apt autoremove -y
-
 ```
 
 You may want to also install the AzureRM's modules. Within a PowerShell prompt as root run:
@@ -247,43 +251,64 @@ Import-Module -Name AzureRM.Netcore
 ### Specially if you are behind of proxies
 ## Set the Proxy Server for Shell & APT Repositories  (Optional)
 Edit the following files. Make sure you replace with your LDAP credentials.
-```
+
 you may create a config file containing proxy settings as follows:
 
 ## Set your new root password in Ubuntu
+```
 sudo passwd
+```
 
 ## Login as root
+```
 sudo -su
+```
 
-# nano /etc/apt/apt.conf.d/99proxy.conf
+```
+nano /etc/apt/apt.conf.d/99proxy.conf
+```
 
+```
 Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
 Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
 Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+```
 
+```
+nano /etc/apt/apt.conf
+```
 
-# nano /etc/apt/apt.conf
-
+```
 Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
 Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
 Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+```
 
+```
+nano /etc/apt/apt.conf.d/95proxies
+```
 
-# nano /etc/apt/apt.conf.d/95proxies
-
+```
 Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
 Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
 Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+```
 
+```
+nano ~/.bash.rc
+```
 
-# nano ~/.bash.rc
+```
 Acquire::http::Proxy "http://domain\samaccount:yourpassword@proxyip:8080/";
 Acquire::https::Proxy "http://domain\samaccount:yourpassword@proxyip:8443/";
 Acquire::ftp::Proxy "ftp://domain\samaccount:yourpassword@proxyip:8080/";
+```
 
+```
+nano /etc/environment
+```
 
-# nano /etc/environment
+```
 http_proxy=http://proxyip:8080/
 https_proxy=http://proxyip:8080/
 ftp_proxy=http://proxyip:8080/
@@ -292,11 +317,20 @@ HTTP_PROXY=http://proxyip:8080/
 HTTPS_PROXY=http://proxyip:8080/
 FTP_PROXY=http://proxyip:8080/
 NO_PROXY="localhost,127.0.0.1,youripaddress,.local.domain"
+```
 
-# nano /etc/wgetrc (Search Proxy Section)
+
+```
+nano /etc/wgetrc 
+```
+
+(Search Proxy Section and add the below)
+
+```
 https_proxy  = http://domain\samaccount:yourpassword@proxyip:8443
 http_proxy = http://domain\samaccount:yourpassword@proxyip:8080
 ftp_proxy = http://domain\samaccount:yourpassword@proxyip:8080
+```
 
 Uncomment 'use_proxy = on'
 
@@ -304,7 +338,6 @@ Uncomment 'use_proxy = on'
 
 
 ```
-
 Some valid proxies are:
 ```
 domain (ip)
