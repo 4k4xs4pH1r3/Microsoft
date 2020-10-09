@@ -112,9 +112,9 @@ ansible_env:
   AZURE_RM_SUB_westus2: "id"
   AZURE_RM_SUB_westus2_mgmt: "id"
   AZURE_RM_SUB_eastus: "id"
-AZURE_RM_CLIENTID: "SPN_ID"
-AZURE_RM_SECRET: "SPN_SECRET"
-AZURE_RM_TENANTID: "id"
+  AZURE_RM_CLIENTID: "SPN_ID"
+  AZURE_RM_SECRET: "SPN_SECRET"
+  AZURE_RM_TENANTID: "id"
 ```
 Make sure you replace any text bwtween **< >**a with your personal information.
 
