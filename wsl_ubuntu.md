@@ -1,7 +1,8 @@
 # Developer Station - WSL2 Ubuntu
 
-# Setup the PowerShell Environment
-Update/Install  the AzureRM and pre-requisiste PS1 Modules. Open up a PS Window as Administrator and run:
+# Setup the PowerShell Environment In Windows 10 
+
+Update/Install the AzureRM and pre-requisiste PS1 Modules. Open up a PS Window as Administrator and run:
 ```
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 install-module PackageManagement -verbose -force
