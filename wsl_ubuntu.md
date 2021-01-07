@@ -20,11 +20,13 @@ Once completed close the PS Window.
 Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
 
 
-## Install WSL
+## Install WSL 2
 
 First, you need to have your Windows 10 updated to the lastest version.
 
 Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Windows features on or off* and tick the feature "*Windows Subsystem for Linux*".
+
+Now implement this https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 Third, go to Microsoft Store search *Ubuntu* and install
 
@@ -34,7 +36,7 @@ Third, go to Microsoft Store search *Ubuntu* and install
 #
 
 
-## Open the Ubuntu WSL, Update and set your timezone
+## Open the Ubuntu WSL 2, Update and set your timezone
 Get your WSL to the latest and greatest within the version installed. Run as root:
 
 ```
