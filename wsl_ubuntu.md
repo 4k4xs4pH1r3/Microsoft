@@ -1,5 +1,9 @@
 # Developer Station - WSL2 Ubuntu
 
+# What is Windows Subsystem for Linux (WSL 2) ?
+
+Windows Subsystem for Linux (WSL 2) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
+
 # Setup the PowerShell Environment In Windows 10 
 
 Update/Install the AzureRM and pre-requisiste PS1 Modules. Open up a PS Window as Administrator and run:
@@ -16,11 +20,7 @@ Download and Install AZ Cli from https://aka.ms/installazurecliwindows
 
 Once completed close the PS Window.
 
-# Windows Subsystem for Linux (WSL 2)
-
-Windows Subsystem for Linux (WSL 2) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
-
-
+#
 ## Install WSL 2
 
 First, you need to have your Windows 10 updated to the lastest version.
