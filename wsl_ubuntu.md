@@ -1,4 +1,4 @@
-# Developer Station - WSL Ubuntu
+# Developer Station - WSL2 Ubuntu
 
 # Setup the PowerShell Environment
 Update/Install  the AzureRM and pre-requisiste PS1 Modules. Open up a PS Window as Administrator and run:
