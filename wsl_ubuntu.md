@@ -15,9 +15,9 @@ Download and Install AZ Cli from https://aka.ms/installazurecliwindows
 
 Once completed close the PS Window.
 
-# Windows Subsystem for Linux (WSL)
+# Windows Subsystem for Linux (WSL 2)
 
-Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
+Windows Subsystem for Linux (WSL 2) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
 
 
 ## Install WSL 2
@@ -26,7 +26,7 @@ First, you need to have your Windows 10 updated to the lastest version.
 
 Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Windows features on or off* and tick the feature "*Windows Subsystem for Linux*".
 
-Now implement this https://docs.microsoft.com/en-us/windows/wsl/install-win10
+Now implement WSL 2 following this https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 Third, go to Microsoft Store search *Ubuntu* and install
 
