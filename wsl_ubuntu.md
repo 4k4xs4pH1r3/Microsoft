@@ -38,7 +38,7 @@ Third, go to Microsoft Store search *Ubuntu* and install
 
 
 ## Open the Ubuntu WSL 2, Update and set your timezone
-Get your WSL to the latest and greatest within the version installed. Run as root:
+Get your WSL 2 to the latest and greatest within the version installed. Run as root:
 
 ```
 apt-get update -y
@@ -68,7 +68,7 @@ sudo su -c 'apt-get update && apt-get install -y ansible==2.4.2.0-1ppa~zesty && 
 
 Keep in mind that package *ansible* is marked on hold to prevent future upgrades.
 
-### Install Ansible  + PIP 2 & 3 version by running as root:
+### Install Ansible + PIP 2 & 3 version by running as root:
 
 ```
 apt install python-pip -y
@@ -355,7 +355,7 @@ domain (ip)
 #
 #
 #
-## Uninstall WSL (optional)
+## Uninstall WSL 2 (optional)
 
 With a **_privileged user_** run on a command window:
 
